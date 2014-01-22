@@ -3,6 +3,8 @@ var LibraryView = Backbone.View.extend({
 
   tagName: "table",
 
+  idAttribute: 'libraryView',
+
   initialize: function() {
     this.render();
   },
@@ -17,6 +19,7 @@ var LibraryView = Backbone.View.extend({
         return new LibraryEntryView({model: song}).render();
       })
     );
+    return this.$el;
   }
 
 });
