@@ -12,10 +12,13 @@ var SongModel = Backbone.Model.extend({
     var count = this.get('playCount');
     this.set('playCount', count+1);
   },
-  enqueue: function(){
+  enqueue: function(addToPlayist){
     this.trigger('enqueue', this);
   },
   dequeue: function(){
     this.trigger('dequeue', this);
+  },
+  addToPlayList: function(){
+    this.trigger('addToPlayist', this);
   }
 });
