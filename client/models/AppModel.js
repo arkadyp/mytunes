@@ -19,10 +19,17 @@ var AppModel = Backbone.Model.extend({
       this.get('songQueue').add(song);
     }, this);
 
+    params.library.on('addToPlayList', function(song){
+      this.get('playlists').add(song);
+    }, this);
+
     this.get('songQueue').on('dequeue', function(song){
       this.get('songQueue').remove(song);
       this.get('songQueue').playFirst();
     }, this);
-  }
+  },
 
+  addPlaylist: function() {
+    console.log('add playlist called');
+  }
 });
