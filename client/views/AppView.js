@@ -15,7 +15,7 @@ var AppView = Backbone.View.extend({
     var that = this;
     this.playlistFormView.$el.on("submit", function(e){
       e.preventDefault();
-      that.model.addPlaylist();
+      that.model.addPlaylist($(this).find('input').val());
     });
   },
 
