@@ -6,7 +6,7 @@ var AppView = Backbone.View.extend({
     this.libraryView = new LibraryView({collection: this.model.get('library')});
     this.queueView = new SongQueueView({collection: this.model.get('songQueue')});
     this.playlistFormView = new PlaylistFormView();
-    this.playlistView = new PlayListView({collection: this.model.get('playlists')});
+    this.playlistsView = new PlayListsView({collection: this.model.get('playlists')});
 
     this.model.on('change:currentSong', function(model){
       this.playerView.setSong(model.get('currentSong'));
@@ -25,7 +25,7 @@ var AppView = Backbone.View.extend({
       this.playlistFormView.$el,
       this.libraryView.$el,
       this.queueView.$el,
-      this.playlistView.$el
+      this.playlistsView.$el
     ]);
   }
 
